@@ -1,0 +1,43 @@
+.elementor-20 .elementor-element.elementor-element-4b35d0e{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--align-items:center;--gap:0px 0px;--background-transition:0.3s;}.elementor-20 .elementor-element.elementor-element-4b35d0e:not(.elementor-motion-effects-element-type-background), .elementor-20 .elementor-element.elementor-element-4b35d0e > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-primary );}.elementor-20 .elementor-element.elementor-element-4b35d0e, .elementor-20 .elementor-element.elementor-element-4b35d0e::before{--border-transition:0.3s;}.elementor-20 .elementor-element.elementor-element-7548d34{--display:flex;--background-transition:0.3s;--margin-top:0em;--margin-bottom:0em;--margin-left:0em;--margin-right:0em;}.elementor-20 .elementor-element.elementor-element-e15d89b{text-align:left;}.elementor-20 .elementor-element.elementor-element-e15d89b img{width:100%;height:5vh;}.elementor-20 .elementor-element.elementor-element-cfd954b{--display:flex;--justify-content:center;--background-transition:0.3s;}.elementor-20 .elementor-element.elementor-element-f7f22fb .elementor-icon-wrapper{text-align:right;}.elementor-20 .elementor-element.elementor-element-f7f22fb.elementor-view-stacked .elementor-icon{background-color:var( --e-global-color-5fd91c3 );}.elementor-20 .elementor-element.elementor-element-f7f22fb.elementor-view-framed .elementor-icon, .elementor-20 .elementor-element.elementor-element-f7f22fb.elementor-view-default .elementor-icon{color:var( --e-global-color-5fd91c3 );border-color:var( --e-global-color-5fd91c3 );}.elementor-20 .elementor-element.elementor-element-f7f22fb.elementor-view-framed .elementor-icon, .elementor-20 .elementor-element.elementor-element-f7f22fb.elementor-view-default .elementor-icon svg{fill:var( --e-global-color-5fd91c3 );}.elementor-20 .elementor-element.elementor-element-f7f22fb .elementor-icon{font-size:2em;}.elementor-20 .elementor-element.elementor-element-f7f22fb .elementor-icon svg{height:2em;}@media(max-width:767px){.elementor-20 .elementor-element.elementor-element-4b35d0e{--justify-content:center;--align-items:flex-end;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );}.elementor-20 .elementor-element.elementor-element-7548d34{--width:70%;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--align-items:center;}.elementor-20 .elementor-element.elementor-element-e15d89b img{width:70%;height:0%;}.elementor-20 .elementor-element.elementor-element-cfd954b{--width:30%;--align-items:flex-end;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );}.elementor-20 .elementor-element.elementor-element-f7f22fb .elementor-icon{font-size:100%;}.elementor-20 .elementor-element.elementor-element-f7f22fb .elementor-icon svg{height:100%;}}/* Start custom CSS for image, class: .elementor-element-e15d89b *//***
+* class: .logo
+* Add the class "logo" to your logo to scale your logo to 50% on scroll
+*/
+header.sticky-header .logo img,
+header.sticky-header .logo.elementor-widget-theme-site-logo img,
+header.sticky-header .logo .elementor-icon svg {
+	--logo-height: 5vh; /* This should be the original logo height _before_ being shrunk */
+	--logo-shrink-to: 0.5; /* Shrinks logo to 80%, values: 0.10 to 1.00, where 1.00, as in 100%, won't shrink the logo */
+	height: var(--logo-height);
+	transition: height var(--transition-timing);
+}
+header.sticky-header.elementor-sticky--effects .logo img,
+header.sticky-header.elementor-sticky--effects .logo.elementor-widget-theme-site-logo img,
+header.sticky-header.elementor-sticky--effects .logo .elementor-icon svg {
+	height: calc(var(--logo-height) * var(--logo-shrink-to));
+}
+header.sticky-header .logo .elementor-icon svg {
+	width: auto;
+}/* End custom CSS */
+/* Start custom CSS for container, class: .elementor-element-4b35d0e *//***
+* Shrinking Sticky header, Elementor Container edition
+* class: .sticky-header
+* This will only work with the Elementor container section
+* the header uses additional 3 classes to gain higher CSS specificity and to avoid adding !important
+*/
+header.sticky-header.e-container.elementor-element {
+	--header-height: 6em; /* Set your own header height */
+	--shrink-header-to: 0.6; /* Shrinks to 60%, values: 0.1 to 1 */
+	--transition-timing: .45s cubic-bezier(.4, 0, .2, 1); /* values: .1s to 0.5s (or more), replace "cubic-bezier(.4, 0, .2, 1)" with "ease" if you need a simpler transition */
+	background-color: rgba(244, 245, 248, 1); /* Set your own background color */
+	--min-height: var(--header-height);
+	--transition: background-color var(--transition-timing),
+					backdrop-filter var(--transition-timing),
+					box-shadow var(--transition-timing),
+					min-height var(--transition-timing);
+}
+header.sticky-header.e-container.elementor-element.elementor-sticky--effects {
+	background-color: rgba(100, 36, 128, .6);!important /* Set your own background color on scroll */
+		-webkit-backdrop-filter: saturate(180%) blur(20px); /* Delete this line if you don't use transparency on scroll */
+	backdrop-filter: saturate(180%) blur(20px); /* Delete this line if you don't use transparency on scroll */
+	--min-height: calc( var(--header-height) * var(--shrink-header-to) );
+}/* End custom CSS */
